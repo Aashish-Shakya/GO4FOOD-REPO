@@ -1,0 +1,143 @@
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+    margin:0;
+    padding: 0;
+}
+ 
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    color: white;
+}
+ 
+ 
+h1{
+    color: darkgoldenrod; 
+}
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap');
+.whoweare{
+    font-size: 27px;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+font-family: 'Bungee', cursive;
+padding: 10px 90px;
+    color: black;
+    width:82%;
+    border: 4px solid grey;
+    border-radius: 15px;
+     
+}
+.our{
+    font-size: 55px;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:10px;
+    flex-wrap: wrap;
+}
+.cards .card{
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 21%;
+    height: 24%;
+    margin: 16px;
+    background-color: white;
+      transition: transform 0.5s;
+      box-shadow: 0 4px 8px 0 black;
+}
+.card:hover{
+    background-color: #ebf0f0;
+  transform: scale(1.1);
+  box-shadow: 0 0 5px  #d9c0a3;
+  text-shadow: 0 0 5px #d9c0a3;
+}
+.card p{
+    font-size: 14px;
+}
+.card h3{
+    font-size: 35px;
+    color: black;
+    height: 60px;
+}
+.card span{
+    color: black;
+    font-size: 22px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Bungee&display=swap');
+.active{
+    font-size: 60px;
+    color: black;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+font-family: 'Bungee', cursive;
+}
+.card-img{
+    border: 9px solid white;
+    border-radius: 100%;
+}
+ .card-img1{
+    width: 100%;
+    height: 20rem;
+    background-image: url('satyajeet.png');
+    background-size: cover;
+    border-radius: 15px;
+    /* background-position: center center; */
+}
+.card-img2{
+    width: 100%;
+    height: 20rem;
+    background-image: url('aashish.png');
+    background-size: cover;
+    /* background-position: center center; */
+    border-radius: 15px;
+}
+.card-img3{
+    width: 100%;
+    height: 20rem;
+    background-image: url('anurag.png');
+    background-size: cover;
+    /* background-position: center center; */
+    border-radius: 15px;
+}
+.card-img4{
+    width: 100%;
+    height: 20rem;
+    background-image: url('aryan.png');
+    background-size: cover;
+    /* background-position: center center; */
+    border-radius: 15px;
+}
+.card-img5{
+    width: 100%;
+    height: 20rem;
+    background-image: url('deepak.png');
+    background-size: cover;
+    /* background-position: center center; */
+    border-radius: 15px;
+}
+.card-img6{
+    width: 100%;
+    height: 20rem;
+    background-image: url('harsh.png');
+    background-size: cover;
+    /* background-position: center center; */
+    border-radius: 15px;
+}
+.card-img7{
+    width: 100%;
+    height: 20rem;
+    background-image: url('shruti.png');
+    background-size: cover;
+    /* background-position: center center;
+     */
+     border-radius: 15px;
+}
+ 
