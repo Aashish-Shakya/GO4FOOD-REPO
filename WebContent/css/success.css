@@ -1,0 +1,206 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: sticky;
+	top: 0;
+	cursor: pointer;
+	background-color: black; /* color of nav bar*/
+}
+
+.nav-list {
+	width: 70%;
+	display: flex;
+	align-items: center;
+}
+
+.nav-list li {
+	list-style: none;
+	padding: 14px;
+}
+
+.left {
+	color: white;
+	display: flex;
+	font-size: 26px;
+	color: lightblue;
+	transition-property: color;
+	transition-duration: 2s;
+	transition-timing-function: ease;
+}
+
+.left:hover {
+	color: blue;
+}
+
+.logo {
+	width: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 8px;
+}
+
+.logo img {
+	width: 35px;
+	height: 32px;
+	border: 2px solid white;
+	border-radius: 40px;
+}
+
+.nav-list li a {
+	text-decoration: none;
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 20px;
+	margin-left: 30px;
+	width: 100%;
+	transition-property: color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
+li a:hover {
+	color: red;
+}
+
+.user {
+	color: white;
+	margin-right: -20%;
+}
+
+.rightNav {
+	width: 30%;
+	text-align: right;
+}
+
+body {
+	background: rgba(0, 0, 0, 0.7) url(alter.jpg);
+	background-size: cover;
+	background-blend-mode: darken;
+}
+
+.box {
+	height: 500px;
+	width: 500px;
+	color: white;
+	border: 1px solid grey;
+	margin: 2% 30%;
+	border-radius: 10px;
+	background-color: white;
+}
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap')
+	;
+
+.payment {
+	color: green;
+	margin: 7% 20%;
+	font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.line {
+	width: 90%;
+	margin: -8%;
+}
+
+.view {
+	color: white;
+	background-color: rgba(0, 0, 255, 0.692);
+	margin: 15%;
+	padding: 20px 26px;
+	font-size: 25px;
+	font-family: 'Mochiy Pop P One', sans-serif;
+	width: 220px;
+	border-radius: 10px;
+}
+
+.viewlink {
+	text-decoration: none;
+	color: white;
+}
+
+.paid {
+	height: 120px;
+	width: 220px;
+	border-radius: 20px;
+	margin: 100px;
+}
+
+.or {
+	color: purple;
+	margin: -45px;
+	font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.dr {
+	text-decoration: none;
+	font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.footer {
+	padding: 20px 333px;
+	background-color: rgba(0, 0, 0, 0.897);
+	text-align: center;
+}
+
+.footer .social a {
+	font-size: 50px;
+	color: blue;
+	width: 6px;
+	height: 10px;
+	line-height: 40px;
+	display: inline-block;
+	transition-property: opacity;
+	transition-duration: 1s;
+	transition-timing-function: ease-in-out;
+	margin: 30 50px;
+	opacity: 40%;
+}
+
+.footer .social a:hover {
+	opacity: 100%;
+}
+
+.footer ul {
+	margin-top: 33px;
+	padding: 4px;
+	list-style: none;
+	font-size: 20px;
+	line-height: 300%;
+	margin-bottom: 18px;
+	text-align: center;
+}
+
+.footer ul li a {
+	color: white;
+	text-decoration: none;
+	opacity: 27;
+	transition-property: opacity;
+	transition-duration: 1s;
+	transition-timing-function: ease-in-out;
+}
+
+.footer ul li {
+	display: inline;
+	padding: 0 28px;
+}
+
+.footer ul li a:hover {
+	opacity: 0.2;
+}
+
+.footer .copyright {
+	margin-top: 15px;
+	text-align: center;
+	font-size: 12px;
+	color: white;
+}
