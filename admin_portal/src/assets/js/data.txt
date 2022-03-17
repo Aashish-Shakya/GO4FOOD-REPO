@@ -1,0 +1,278 @@
+
+hxxp://origin.cam4.com/
+
+
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { Order } from '../order';
+import { OrderService } from '../order.service';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { BillService } from '../bill.service';
+import { Bill } from '../bill';
+
+@Component({
+  selector: 'app-order-list',
+  templateUrl: './order-list.component.html',
+  styleUrls: ['./order-list.component.css']
+})
+export class OrderListComponent implements OnInit {
+  orderService: any;
+  billService: any;
+orders:any[]=[];
+  constructor(orderService: OrderService , private http: HttpClient , billService:BillService) {}
+
+  ngOnInit(): void {
+    this.getBillList();
+    this.getNoOfOrder();
+    this.getOrders();
+  }
+ 
+  private getOrders() {
+
+
+
+    this.billService.getBillList().subscribe((data: any[]) => {
+
+      this.orders = data;
+
+      console.log(data);
+
+    })
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+baseURL:string="http://localhost:8090/admin/order/";
+ 
+  getOrderCount(): Observable<number> {
+  
+    return this.http.get<number>(`${this.baseURL}`);
+  }
+
+  countOrder: number = 0;
+  getNoOfOrder() {
+    this.getOrderCount().subscribe(data => {
+      this.countOrder = data;
+      console.log(this.countOrder);
+    })
+  }
+
+
+
+  order: Order[]=[];
+  billList: any[]=[];
+
+ 
+  getBillList(){
+  this.billService.getBillList().subscribe((data: any[]) => {
+    this.billList = data;
+
+    console.log(this.billList);
+    console.log(data);
+  })
+}
+demo(){
+  console.log(this.billList);
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+    <div class="card">
+
+
+        <div class="card-body">
+
+            <table class="table sticky table-hover">
+                <thead class="thead">
+                    <tr class="text-muted h3">
+                        <th scope="col" class="head">S.No</th>
+                        <th scope="col" class="head">BILL_NO</th>
+                        <th scope="col" class="head">USERNAME</th>
+                        <th scope="col" class="head">TOTAL_AMOUNT</th>
+                        <th scope="col" class="head">ADDRESS</th>
+                        <th scope="col" class="head">TRANSACTION_ID</th>
+                        <th scope="col" class="head">STATUS</th>
+                   
+                    </tr>
+                </thead>
+
+                <tbody>
+
+
+                    <!-- {{billList}} -->
+                    <!-- <button (click)="demo()">Test</button> -->
+                    <tr *ngFor="let bill of orders; let i = index" class="text-black">
+
+                        <td>{{i+1}}</td>
+
+                        <td>{{bill.billNo}}</td>
+
+                        <td>{{bill.username}}</td>
+
+                        <td>{{bill.totalAmount}}</td>
+
+                        <td>{{bill.address}}</td>
+
+                        <td>{{  bill.ordersList[0].transactionId }}</td>
+                       
+
+                        <td>{{ bill.status }}</td>
+
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+hxxp://origin.cam4.com/
+
+
+
+Hi ma’am,
+
+As we've reached to end of this month still I haven't received any reimbursement of this month as well as the previous month though my other fellow mates have received that.
+
+It's a humble request to look into it and take action as soon as possible.
+
+Thanks
+
+
+Greetings Sir,
+
+I am writing this mail in this regard that from the last 2 months, I along with many scholars have not got the data card expense reimbursement for the month of January and February.  I request you to process this request at your earliest convenience.
+I would be very happy if you process my request
+
+Best Regards
+
+Vaibhav Sharma
+Intern, HCL Technologies Ltd.
+
+
+
+
+<div class="body">
+    <div class="container">
+        <h2 class="OD">Order Details</h2>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                  
+                    <table class="table1">
+                        <thead>
+                            <tr>
+                                <th scope="col">Bill No</th>
+                                <th scope="col">TRX ID</th>
+                                <th scope="col">Total Amount</th>
+                                <th scope="col">Date & Time </th>
+                                <th>
+                                    <!-- collapseone -- href="#collapseOne"  -->
+                  <!-- <a class="card-link" data-toggle="collapse"  routerLink="/collapseone" routerLinkActive="active">
+                    More Details <i class="fa fa-angle-down" style="font-size:25px"></i>
+               </a>  -->
+               <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseOne">Simple collapsible</button>
+            </th>
+                            </tr>
+
+
+                        </thead>
+                        <tr>
+                            <td>235667</td>
+                            <td>sa2673</td>
+                            <td>234.00</td>
+                            <td>Date & Time</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                  
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="head">S.No</th>
+                                    <th scope="col" class="head">Product</th>
+                                    <th scope="col" class="head">Name</th>
+                                    <th scope="col" class="head">Quantity</th>
+                                    <th scope="col" class="head">Price</th>
+                                    <th scope="col" class="head">Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="image-box"><img
+                                            src="https://www.rajbhog.com/wp-content/uploads/2021/02/Pav-Bhaji-870x635.jpg"
+                                            class="image1"></td>
+                                    <div class="info">
+                                    </div>
+                            
+
+                                <td>
+                                    <h1>Pav Bhaji</h1>
+                                </td>
+                                <td>
+                                    <!-- <div onclick="updateQty('Pav Bhaji', 2)" class="btn">-</div> -->
+                                    <div class="count">3</div>
+                                    <!-- <div onclick="updateQty('Pav Bhaji', 4)" class="btn">+</div> -->
+                                </td>
+                                <td>199.0</td>
+                                <td>
+                                    <div>597.0</div>
+                                    <!-- </div> -->
+                                </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- </center> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="float-end">
+    <a href="#" class="button glow-button">Back To Home</a>
+</div>
+
+<!-- <app-bootstrap-modals></app-bootstrap-modals> -->
+<!-- </div> -->
+<!-- </body> -->
+<!-- </html> -->
+
