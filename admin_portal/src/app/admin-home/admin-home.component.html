@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+
+  <title>Admin-portal</title>
+  <!-- <link rel="stylesheet" href="demo.css">
+  <script src="admin.js"></script> -->
+
+
+
+</head>
+
+<body>
+ 
+
+  <nav class="navbar navbar-expand-lg navbar-dark custom-bg">
+
+    <div class="container">
+      <a class="navbar-brand" href="#">ADMIN_PORTAL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">GO 4 FOOD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          
+        </ul>
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item  active">
+            <a class="nav-link" href="http://localhost:8091/GOFORFOOD/Signin.jsp">Logout</a>
+          </li>
+          
+        </ul>
+
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- <a routerLink="/user" routerLinkActive="active">User-Details</a> -->
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-4"  routerLink="/user" routerLinkActive="active">
+        <div class="card">
+          <div class="card-body text-center">
+
+            <div class="tilter">
+              <div class="container">
+                <img class="img-fluid" src="assets/images/team.png" alt="">
+       
+              </div>
+              <p class="text display-4">{{this.countUser}}</p>
+              <p class="display-4 text-muted">USERS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" (click)="open(mymodal)">
+        <div class="card" data-bs-toggle="modal" data-bs-target="#DISHES">
+          <div class="card-body text-center">
+
+            <div class="tilter">
+              <div class="container">
+                <img class="img-fluid" src="assets/images/dish.png" alt="">
+              </div>
+              <p class="text display-4">{{this.countDish}}</p>
+              <p class="display-4 text-muted">DISHES</p>
+             
+              <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button> -->
+            </div>
+          </div>
+        </div>
+      <!-- </a> -->
+      </div>
+      <div class="col-md-4"  routerLink="/order" routerLinkActive="active">
+        <div class="card">
+          <div class="card-body text-center">
+
+            <div class="tilter">
+              <div class="container">
+                <img class="img-fluid" src="assets/images/order.png" alt="">
+              </div>
+              <p class="text display-4">{{this.countBill}}</p>
+              <p class="display-4 text-muted">ORDERS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+       
+    <!-- <ng-template #mymodal let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        This is example from ItSolutionStuff.com
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+      </div>
+    </ng-template> -->
+
+
+    <!-- MODALS -->
+
+    <!-- Modal-DISH-->
+
+    <!-- class="modal fade" -->
+    <!--  id="DISHES"    aria-hidden="true" aria-labelledby="DISHES" tabindex="-1"
+      data-bs-backdrop="static" data-bs-keyboard="false" -->
+      
+    <ng-template #mymodal let-modal >
+    <!-- <div >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content"> -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-basic-title">Choose option</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <!-- <span aria-hidden="true">×</span> -->
+            </button>
+          </div>
+          <div class="modal-body">
+            <button class="btn btn-primary" data-bs-target="#add-category" data-bs-toggle="modal" (click)="open(addmodal)" (click)="modal.dismiss('Remove')">ADD</button>
+            <a routerLink="/dish" routerLinkActive="active">
+            <button class="btn btn-primary" data-bs-target="#remove-dish" data-bs-dismiss="modal" (click)="modal.dismiss('Remove')">EDIT</button> </a>
+
+            <a href="http://localhost:8091/GOFORFOOD/Menu.jsp">
+            <button class="btn btn-primary" data-bs-target="#view-menu" data-bs-dismiss="modal"  (click)="modal.dismiss('Remove')" routerLink="/menu" routerLinkActive="active">View</button>
+          </a>
+          </div> 
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+     </div>
+ 
+
+  </ng-template>
+
+  <ng-template #addmodal let-modal>
+    <!-- Modal->Add category -->
+    <div class=" " id="add-category" aria-hidden="true" aria-labelledby="add-category" tabindex="-1">
+        <!-- <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content"> -->
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel2">ADD PRODUCT</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <form action="#">
+                <div class="form-group" id="form-a">
+                    <input type="text" id="addCat" class="form-control" name="dishCat" (change)="validate()" placeholder="Enter Category" required />
+                    <br>
+                    <input type="text" id="addTitle" class="form-control" name="catTitle" (change)="validate()"  placeholder="Enter Dish Name" required />
+                    <br>
+                    <input type="text" id="addImg" class="form-control" name="dishImg"  (change)="validate()"  placeholder="Enter The Url of Image" required />
+                    <br>
+                    <input type="text" id="addPrice" class="form-control" name="dishPrice"  (change)="validate()" placeholder="Enter Original Price" required />
+                    <br>
+                    <input type="text" class="form-control" id="addDP" name="dishDP" (change)="validate()"  placeholder="Enter Discounted Price" required />
+                    <br>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#preview" id="previewBtn" data-bs-toggle="modal" (click)="add();open(previewmodal);modal.dismiss('Remove')">Preview</button>
+            <!-- <button class="btn btn-primary" data-bs-target="#preview" data-bs-toggle="modal" (click)="add(); modal.dismiss('Remove')" id="previewBtn">Preview</button> -->
+            <button class="btn btn-primary" data-bs-target="#DISHES" data-bs-toggle="modal" (click)="modal.dismiss('Remove');open(mymodal)">Back to first</button>
+        </div>
+    </div>
+    <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#DISHES"  >  -->
+    <!-- </div>
+  </div> -->
+</ng-template>
+
+<ng-template #previewmodal let-modal>
+    <!-- Modal-> Preview -->
+    <!-- Vertically centered scrollable modal -->
+ 
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">The
+            entered dish data appears like this</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <div class="dish-container" style="padding-bottom: 15px;">
+            <div class="card">
+              <div class="imgBx">
+                <img class="image" src="{{this.dish.image_url}}" id="imageurl">
+              </div>
+              <div class="contentBx">
+                <h2 class="shop-item-title" id="dishname">{{this.dish.name}}</h2>
+                <br>
+                <div>
+                  <h3 id="price">
+                    Price: <label style="color: red; text-decoration: line-through;">{{this.dish.price}}</label> {{this.dish.discount}}/-
+                  </h3>
+                  <br>
+                </div>
+                <button class="shop-item-button"
+                  style="background-color: rgb(57, 241, 33)">ADD</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" data-bs-target="#preview"
+            data-bs-toggle="modal" form="form-a" (click)="save()">Submit</button>
+          <!-- <button class="btn btn-primary" data-bs-target="#DISHES" -->
+            <!-- data-bs-toggle="modal" (click)="modal.dismiss('Remove'); open(addmodal)">Back to first</button> -->
+          <button class="btn btn-danger" data-bs-target="#DISHES"
+            data-bs-toggle="modal" (click)="modal.dismiss('Remove');open(addmodal)">Cancel</button>
+
+        </div>
+        <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#DISHES"  >  -->
+      </div>
+    </div>
+ 
+</ng-template>
+
+
+  <!-- Modal-> View-->
+    
+
+
+    <div class="modal fade" id="view-menu" aria-hidden="true" aria-labelledby="add-category" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content text-center">
+          <div class="modal-header">
+            <h5 class="modal-title text-center text" id="exampleModalToggleLabel2"> The entered dish data appears like this</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+             
+          </div>
+          <div class="modal-footer">
+            
+            <button class="btn btn-success" data-bs-target="admin.html" data-bs-toggle="modal">Submit</button>
+
+          </div>
+          <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#DISHES"  >  -->
+        </div>
+      </div>
+    </div>
+
+<!-- 
+</body>
+
+</html>
+ -->
+
+<!-- <app-dish-list></app-dish-list> -->
+<!-- <app-bootstrap-modals></app-bootstrap-modals> -->
